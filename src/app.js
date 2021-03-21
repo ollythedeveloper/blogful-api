@@ -16,6 +16,11 @@ app.use(morgan(morganOption))
 app.use(helmet())
 app.use(cors())
 
+app.get('/xss', (req, res) => {
+    res.cookie('secretToken', '1234567890');
+    res.sendFile(__dirname + '/xss-example.html');
+});
+
 app.use('/articles', articlesRouter)
 
 app.get('/', (req, res) => {
