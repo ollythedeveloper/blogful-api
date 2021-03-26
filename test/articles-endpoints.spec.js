@@ -3,6 +3,7 @@ const knex = require('knex')
 const supertest = require('supertest')
 const app = require('../src/app')
 const { makeArticlesArray, makeMaliciousArticle } = require('./articles.fixtures')
+const { makeUsersArray } = require('./users.fixtures')
 
 describe(`Article Endpoints`, function() {
     let db
